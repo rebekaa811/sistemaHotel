@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package telas;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import model.Quarto;
+import modelo.dao.QuartoDAO;
 
 /**
  *
@@ -11,9 +14,9 @@ import javax.swing.JOptionPane;
  */
 public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaCadQuartos
-     */
+    Quarto quarto = new Quarto();
+    QuartoDAO quartoDAO = new QuartoDAO();
+    
     public TelaCadastroQuartos() {
         initComponents();
     }
@@ -38,6 +41,10 @@ public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
         valorDiariaTelaCadQuarto = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
 
         setClosable(true);
         setTitle("Pallace Hotel Cadastro de Quartos");
@@ -95,13 +102,16 @@ public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jSeparator7)
+            .addComponent(jSeparator8)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(botaoSalvarTCQ, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(botaoSalvarTCQ, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(439, 439, 439))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -112,32 +122,41 @@ public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
                             .addComponent(tipoQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(numQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(statusQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(valorDiariaTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(333, 333, 333))
+                            .addComponent(valorDiariaTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(333, 333, 333))))
+            .addComponent(jSeparator9)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(numQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(26, 26, 26)
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tipoQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(27, 27, 27)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(statusQuartoTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 31, Short.MAX_VALUE)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(valorDiariaTelaCadQuarto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(26, 26, 26)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(botaoSalvarTCQ, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -145,17 +164,33 @@ public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
 
     private void botaoSalvarTCQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarTCQActionPerformed
         // TODO add your handling code here:
-        if (numQuartoTelaCadQuarto.getText().isEmpty() ||
-            tipoQuartoTelaCadQuarto.getSelectedItem().toString().isEmpty() ||
-            statusQuartoTelaCadQuarto.getSelectedItem().toString().isEmpty() ||
-            valorDiariaTelaCadQuarto.getText().isEmpty()) {
-
-            JOptionPane.showMessageDialog(null, "Preencha os campos para salvar os dados do quarto!");
+        salvarDados();
+    }
+    private void salvarDados(){
+        if(validarCampos()) {
+            JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar um quarto");
         } else {
-            JOptionPane.showMessageDialog(null, "Dados do quarto salvos com sucesso!");
-        }
+            try {
+                quarto.setNumero(numQuartoTelaCadQuarto.getText());
+                quarto.setTipo(tipoQuartoTelaCadQuarto.getSelectedItem().toString());
+                quarto.setStatus(statusQuartoTelaCadQuarto.getSelectedItem().toString());
+                quarto.setValor(valorDiariaTelaCadQuarto.getText());
+                
+                quartoDAO.criarRegistroNoBancodeDados(quarto);
+                JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso!");
+                
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null, "Erro ao salvar os dados: "+e.toString());
+            }
+        }          
     }//GEN-LAST:event_botaoSalvarTCQActionPerformed
 
+    private boolean validarCampos() {
+        return (numQuartoTelaCadQuarto.getText().equals("")
+                || tipoQuartoTelaCadQuarto.getSelectedItem().equals("")
+                || statusQuartoTelaCadQuarto.getSelectedItem().equals("")
+                || valorDiariaTelaCadQuarto.getText().equals(""));
+    }  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoSalvarTCQ;
@@ -165,6 +200,10 @@ public class TelaCadastroQuartos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTextField numQuartoTelaCadQuarto;
     private javax.swing.JComboBox<String> statusQuartoTelaCadQuarto;
     private javax.swing.JComboBox<String> tipoQuartoTelaCadQuarto;

@@ -30,6 +30,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        telaFundo = new javax.swing.JDesktopPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,30 +49,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jCalendar2 = new com.toedter.calendar.JCalendar();
         jLabel12 = new javax.swing.JLabel();
-        telaFundo = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastro = new javax.swing.JMenu();
         hospedes = new javax.swing.JMenu();
         menuCadHospede = new javax.swing.JMenuItem();
-        menuConHospede = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         quartos = new javax.swing.JMenu();
         menuCadQuartos = new javax.swing.JMenuItem();
-        menuConQuartos = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         funcionarios = new javax.swing.JMenu();
         menuCadFuncionarios = new javax.swing.JMenuItem();
-        menuConFuncionarios = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         fornecedores = new javax.swing.JMenu();
         menuCadFornecedores = new javax.swing.JMenuItem();
-        menuConFornecedores = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         produtos = new javax.swing.JMenu();
         menuCadProdutos = new javax.swing.JMenuItem();
-        menuConProdutos = new javax.swing.JMenuItem();
-        serviços = new javax.swing.JMenu();
-        menuCadServiços = new javax.swing.JMenuItem();
-        menuConServiços = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         menuReservas = new javax.swing.JMenu();
         cadastrarReserva = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         consultarReserva = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
         menuVendas = new javax.swing.JMenu();
         produtoVendas = new javax.swing.JMenu();
         serviçoVendas = new javax.swing.JMenu();
@@ -83,8 +82,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadContPaga = new javax.swing.JMenuItem();
         menuConContRec = new javax.swing.JMenuItem();
         Balanço = new javax.swing.JMenu();
-        menuFerramentas = new javax.swing.JMenu();
-        sobreOSistema = new javax.swing.JMenu();
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,11 +92,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 975, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 32, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout telaFundoLayout = new javax.swing.GroupLayout(telaFundo);
+        telaFundo.setLayout(telaFundoLayout);
+        telaFundoLayout.setHorizontalGroup(
+            telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 664, Short.MAX_VALUE)
+        );
+        telaFundoLayout.setVerticalGroup(
+            telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 818, Short.MAX_VALUE)
         );
 
         jScrollPane2.setBorder(null);
@@ -152,16 +160,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
-                        .addComponent(jLabel3)))
-                .addGap(0, 69, Short.MAX_VALUE))
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel4)))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,22 +197,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblGAcesso))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel12))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                            .addComponent(jCalendar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(lblGAcesso)))))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +209,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
                 .addGap(10, 10, 10)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(lblnome, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,7 +225,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGAcesso)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jLabel7)
@@ -231,19 +240,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jPanel2);
 
-        javax.swing.GroupLayout telaFundoLayout = new javax.swing.GroupLayout(telaFundo);
-        telaFundo.setLayout(telaFundoLayout);
-        telaFundoLayout.setHorizontalGroup(
-            telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
-        );
-        telaFundoLayout.setVerticalGroup(
-            telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         menuCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastro.png"))); // NOI18N
-        menuCadastro.setText("Cadastros   |");
+        menuCadastro.setText("Cadastros            |        ");
+        menuCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCadastroActionPerformed(evt);
+            }
+        });
 
         hospedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_hospede.png"))); // NOI18N
         hospedes.setText("Hospedes");
@@ -257,14 +260,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         hospedes.add(menuCadHospede);
 
-        menuConHospede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_consultar_20x20.png"))); // NOI18N
-        menuConHospede.setText("Consultar");
-        menuConHospede.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
+        jMenuItem2.setText("Consultar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConHospedeActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        hospedes.add(menuConHospede);
+        hospedes.add(jMenuItem2);
 
         menuCadastro.add(hospedes);
 
@@ -280,14 +283,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         quartos.add(menuCadQuartos);
 
-        menuConQuartos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
-        menuConQuartos.setText("Consultar");
-        menuConQuartos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
+        jMenuItem1.setText("Consultar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConQuartosActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        quartos.add(menuConQuartos);
+        quartos.add(jMenuItem1);
 
         menuCadastro.add(quartos);
 
@@ -303,14 +306,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         funcionarios.add(menuCadFuncionarios);
 
-        menuConFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_consultar_20x20.png"))); // NOI18N
-        menuConFuncionarios.setText("Consultar");
-        menuConFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
+        jMenuItem3.setText("Consultar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConFuncionariosActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        funcionarios.add(menuConFuncionarios);
+        funcionarios.add(jMenuItem3);
 
         menuCadastro.add(funcionarios);
 
@@ -326,14 +329,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         fornecedores.add(menuCadFornecedores);
 
-        menuConFornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_consultar_20x20.png"))); // NOI18N
-        menuConFornecedores.setText("Consultar");
-        menuConFornecedores.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
+        jMenuItem4.setText("Consultar");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConFornecedoresActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        fornecedores.add(menuConFornecedores);
+        fornecedores.add(jMenuItem4);
 
         menuCadastro.add(fornecedores);
 
@@ -349,57 +352,62 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         produtos.add(menuCadProdutos);
 
-        menuConProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
-        menuConProdutos.setText("Consultar");
-        menuConProdutos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
+        jMenuItem5.setText("Consultar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConProdutosActionPerformed(evt);
+                jMenuItem5ActionPerformed(evt);
             }
         });
-        produtos.add(menuConProdutos);
+        produtos.add(jMenuItem5);
 
         menuCadastro.add(produtos);
-
-        serviços.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_servicos.png"))); // NOI18N
-        serviços.setText("Serviços");
-
-        menuCadServiços.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_serviços_con.png"))); // NOI18N
-        menuCadServiços.setText("Cadastrar");
-        menuCadServiços.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCadServiçosActionPerformed(evt);
-            }
-        });
-        serviços.add(menuCadServiços);
-
-        menuConServiços.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
-        menuConServiços.setText("Consultar");
-        menuConServiços.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConServiçosActionPerformed(evt);
-            }
-        });
-        serviços.add(menuConServiços);
-
-        menuCadastro.add(serviços);
 
         jMenuBar1.add(menuCadastro);
 
         menuReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reservas.png"))); // NOI18N
-        menuReservas.setText("Reservas   |");
+        menuReservas.setText("Reservas            |       ");
 
         cadastrarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_reserva_20x20.png"))); // NOI18N
         cadastrarReserva.setText("Cadastrar Reserva");
+        cadastrarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarReservaActionPerformed(evt);
+            }
+        });
+
+        jMenuItem7.setText("...");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        cadastrarReserva.add(jMenuItem7);
+
         menuReservas.add(cadastrarReserva);
 
         consultarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/calendar_icon_20x20.png"))); // NOI18N
         consultarReserva.setText("Consultar Reserva");
+        consultarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarReservaActionPerformed(evt);
+            }
+        });
+
+        jMenuItem8.setText("...");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        consultarReserva.add(jMenuItem8);
+
         menuReservas.add(consultarReserva);
 
         jMenuBar1.add(menuReservas);
 
         menuVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/consumo.png"))); // NOI18N
-        menuVendas.setText("Vendas   |  ");
+        menuVendas.setText("Vendas           |          ");
 
         produtoVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_produtos.png"))); // NOI18N
         produtoVendas.setText("Produtos");
@@ -412,7 +420,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menuVendas);
 
         menuFinanceiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/financeiro.png"))); // NOI18N
-        menuFinanceiro.setText("Financeiro   |");
+        menuFinanceiro.setText("Financeiro             |        ");
 
         ContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_paga.png"))); // NOI18N
         ContasAPagar.setText("Contas a Pagar");
@@ -461,15 +469,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuFinanceiro);
 
-        menuFerramentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/ferramentas.png"))); // NOI18N
-        menuFerramentas.setText("Ferramentas   |");
-
-        sobreOSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone_sistema.png"))); // NOI18N
-        sobreOSistema.setText("Sobre o Sistema");
-        menuFerramentas.add(sobreOSistema);
-
-        jMenuBar1.add(menuFerramentas);
-
         menuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/sair.png"))); // NOI18N
         menuSair.setText("Sair");
         menuSair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -495,42 +494,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(telaFundo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 817, Short.MAX_VALUE)
-                    .addComponent(telaFundo))
+                    .addComponent(telaFundo)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void menuCadHospedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadHospedeActionPerformed
-        // TODO add your handling code here:
-        TelaCadastroHospede hospede = new TelaCadastroHospede();
-        telaFundo.add(hospede);
-        hospede.setVisible(true);
-    }//GEN-LAST:event_menuCadHospedeActionPerformed
-
-    private void menuConFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConFuncionariosActionPerformed
-        // TODO add your handling code here:
-        TelaCadastroFuncionario consulta = new TelaCadastroFuncionario();
-        telaFundo.add(consulta);
-        consulta.setVisible(true);
-    }//GEN-LAST:event_menuConFuncionariosActionPerformed
-
-    private void menuCadFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadFornecedoresActionPerformed
-        // TODO add your handling code here:
-        TelaCadastroFornecedores fornecedor = new TelaCadastroFornecedores();
-        telaFundo.add(fornecedor);
-        fornecedor.setVisible(true);
-    }//GEN-LAST:event_menuCadFornecedoresActionPerformed
 
     private void menuCadContPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadContPagarActionPerformed
         // TODO add your handling code here:
@@ -548,28 +525,49 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuSairMouseClicked
 
-    private void menuCadFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadFuncionariosActionPerformed
-        // TODO add your handling code here:
-        TelaCadastroFuncionario cadastro = new TelaCadastroFuncionario();
-        telaFundo.add(cadastro);
-        cadastro.setVisible(true);
-    }//GEN-LAST:event_menuCadFuncionariosActionPerformed
-
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
         // TODO add your handling code here:
-        TelaLogin sair = new TelaLogin();
+        new TelaLogin().setVisible(true);
         this.dispose();
-        sair.setVisible(true);
-
         
     }//GEN-LAST:event_menuSairActionPerformed
 
-    private void menuCadQuartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadQuartosActionPerformed
+    private void cadastrarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarReservaActionPerformed
         // TODO add your handling code here:
-        TelaCadastroQuartos quarto = new TelaCadastroQuartos();
-        telaFundo.add(quarto);
-        quarto.setVisible(true);
-    }//GEN-LAST:event_menuCadQuartosActionPerformed
+        TelaReservaCadastrar cadastrar = new TelaReservaCadastrar();
+        telaFundo.add(cadastrar);
+        cadastrar.setVisible(true);
+    }//GEN-LAST:event_cadastrarReservaActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        TelaReservaCadastrar cadastrar = new TelaReservaCadastrar();
+        telaFundo.add(cadastrar);
+        cadastrar.setVisible(true);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void consultarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarReservaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_consultarReservaActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        TelaReservaConsultar consultar = new TelaReservaConsultar();
+        telaFundo.add(consultar);
+        consultar.setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void menuCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuCadastroActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaPadrao consulta = new TelaConsultaPadrao();
+        telaFundo.add(consulta);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void menuCadProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadProdutosActionPerformed
         // TODO add your handling code here:
@@ -578,47 +576,61 @@ public class TelaPrincipal extends javax.swing.JFrame {
         produto.setVisible(true);
     }//GEN-LAST:event_menuCadProdutosActionPerformed
 
-    private void menuCadServiçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadServiçosActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        TelaCadastroServiços servico = new TelaCadastroServiços();
-        telaFundo.add(servico);
-        servico.setVisible(true);
-    }//GEN-LAST:event_menuCadServiçosActionPerformed
+        TelaConsultaPadrao consulta = new TelaConsultaPadrao();
+        telaFundo.add(consulta);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void menuConHospedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConHospedeActionPerformed
+    private void menuCadFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadFornecedoresActionPerformed
         // TODO add your handling code here:
-        TelaConsultaPadrao consultaCad = new TelaConsultaPadrao();
-        telaFundo.add(consultaCad);
-        consultaCad.setVisible(true);
-    }//GEN-LAST:event_menuConHospedeActionPerformed
+        TelaCadastroFornecedores fornecedor = new TelaCadastroFornecedores();
+        telaFundo.add(fornecedor);
+        fornecedor.setVisible(true);
+    }//GEN-LAST:event_menuCadFornecedoresActionPerformed
 
-    private void menuConQuartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConQuartosActionPerformed
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        TelaConsultaPadrao consultaCad = new TelaConsultaPadrao();
-        telaFundo.add(consultaCad);
-        consultaCad.setVisible(true);
-    }//GEN-LAST:event_menuConQuartosActionPerformed
+        TelaConsultaPadrao consulta = new TelaConsultaPadrao();
+        telaFundo.add(consulta);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void menuConFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConFornecedoresActionPerformed
+    private void menuCadFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadFuncionariosActionPerformed
         // TODO add your handling code here:
-        TelaConsultaPadrao consultaCad = new TelaConsultaPadrao();
-        telaFundo.add(consultaCad);
-        consultaCad.setVisible(true);
-    }//GEN-LAST:event_menuConFornecedoresActionPerformed
+        TelaCadastroFuncionario cadastro = new TelaCadastroFuncionario();
+        telaFundo.add(cadastro);
+        cadastro.setVisible(true);
+    }//GEN-LAST:event_menuCadFuncionariosActionPerformed
 
-    private void menuConProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConProdutosActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        TelaConsultaPadrao consultaCad = new TelaConsultaPadrao();
-        telaFundo.add(consultaCad);
-        consultaCad.setVisible(true);
-    }//GEN-LAST:event_menuConProdutosActionPerformed
+        TelaConsultaPadrao consulta = new TelaConsultaPadrao();
+        telaFundo.add(consulta);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void menuConServiçosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConServiçosActionPerformed
+    private void menuCadQuartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadQuartosActionPerformed
         // TODO add your handling code here:
-        TelaConsultaPadrao consultaCad = new TelaConsultaPadrao();
-        telaFundo.add(consultaCad);
-        consultaCad.setVisible(true);
-    }//GEN-LAST:event_menuConServiçosActionPerformed
+        TelaCadastroQuartos quarto = new TelaCadastroQuartos();
+        telaFundo.add(quarto);
+        quarto.setVisible(true);
+    }//GEN-LAST:event_menuCadQuartosActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaPadrao consulta = new TelaConsultaPadrao();
+        telaFundo.add(consulta);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void menuCadHospedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadHospedeActionPerformed
+        // TODO add your handling code here:
+        TelaCadastroHospede hospede = new TelaCadastroHospede();
+        telaFundo.add(hospede);
+        hospede.setVisible(true);
+    }//GEN-LAST:event_menuCadHospedeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -665,6 +677,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -681,17 +700,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCadHospede;
     private javax.swing.JMenuItem menuCadProdutos;
     private javax.swing.JMenuItem menuCadQuartos;
-    private javax.swing.JMenuItem menuCadServiços;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenuItem menuConContPagar;
     private javax.swing.JMenuItem menuConContRec;
-    private javax.swing.JMenuItem menuConFornecedores;
-    private javax.swing.JMenuItem menuConFuncionarios;
-    private javax.swing.JMenuItem menuConHospede;
-    private javax.swing.JMenuItem menuConProdutos;
-    private javax.swing.JMenuItem menuConQuartos;
-    private javax.swing.JMenuItem menuConServiços;
-    private javax.swing.JMenu menuFerramentas;
     private javax.swing.JMenu menuFinanceiro;
     private javax.swing.JMenu menuReservas;
     private javax.swing.JMenu menuSair;
@@ -700,8 +711,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu produtos;
     private javax.swing.JMenu quartos;
     private javax.swing.JMenu serviçoVendas;
-    private javax.swing.JMenu serviços;
-    private javax.swing.JMenu sobreOSistema;
     private javax.swing.JDesktopPane telaFundo;
     // End of variables declaration//GEN-END:variables
 }

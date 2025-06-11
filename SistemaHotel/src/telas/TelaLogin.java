@@ -114,12 +114,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
         String senha = new String(senhaTelaLogin.getPassword());
 
-        if(loginTelaLogin.getText().isEmpty() || senha.isEmpty()) {
-            
-           JOptionPane.showMessageDialog(null, "Preencha os campos!");
-        } else{
+        if(loginTelaLogin.getText().equals("rebeka") || senha.equals("123")) {
            TelaPrincipal tela = new TelaPrincipal();
            tela.setVisible(true);
+           dispose();
+        } else {
+           JOptionPane.showMessageDialog(null, "Preencha os campos!");
         }
           
     }//GEN-LAST:event_jButton1ActionPerformed
