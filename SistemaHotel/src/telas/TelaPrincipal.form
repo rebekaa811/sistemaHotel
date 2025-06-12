@@ -22,6 +22,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hospedes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hospedesActionPerformed"/>
+              </Events>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="menuCadHospede">
                   <Properties>
@@ -54,6 +57,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quartos"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="quartosActionPerformed"/>
+              </Events>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="menuCadQuartos">
                   <Properties>
@@ -185,27 +191,6 @@
             <Property name="text" type="java.lang.String" value="Reservas            |       "/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="cadastrarReserva">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/icon_cad_reserva_20x20.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Cadastrar Reserva"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarReservaActionPerformed"/>
-              </Events>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="..."/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
-                  </Events>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
             <Menu class="javax.swing.JMenu" name="consultarReserva">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -223,6 +208,27 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="cadastrarReserva">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagens/icon_cad_reserva_20x20.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cadastrar Reserva"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarReservaActionPerformed"/>
+              </Events>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="..."/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>

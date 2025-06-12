@@ -5,8 +5,16 @@
 package telas;
 
 import java.util.List;
+import javax.swing.JOptionPane;
 import modelo.dao.HospedeDAO;
 import modelo.dao.QuartoDAO;
+import modelo.dao.ReservaDAO;
+import model.Reserva;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+
 
 /**
  *
@@ -82,6 +90,11 @@ public class TelaReservaCadastrar extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
 
         try {
             jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -95,6 +108,7 @@ public class TelaReservaCadastrar extends javax.swing.JInternalFrame {
             }
         });
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", " ", " ", " ", " ", " " }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -203,13 +217,32 @@ public class TelaReservaCadastrar extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         
+        Reserva reserva = new Reserva();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataEntrada = LocalDate.parse(jFormattedTextField1.getText(), formatter);
+        LocalDate dataSaida = LocalDate.parse(jFormattedTextField2.getText(), formatter);
+        reserva.setDataEntrada(dataEntrada);
+        reserva.setDataSaida(dataSaida);
+        
+        reserva.setStatus(jComboBox3.getSelectedItem().toString());
+
+        try {
+            ReservaDAO dao = new ReservaDAO();
+            reserva.setHospedeId(dao.buscarIdHospedePorNome(jComboBox2.getSelectedItem().toString()));
+            reserva.setQuartoId(dao.buscarIdQuartoPorNumero(jComboBox1.getSelectedItem().toString()));
+
+            dao.salvar(reserva);
+
+            JOptionPane.showMessageDialog(null, "Reserva cadastrada com sucesso!");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.toString());
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-            carregarHospedes();
     }//GEN-LAST:event_jComboBox2ActionPerformed
         private void carregarHospedes() {
             HospedeDAO dao = new HospedeDAO();
@@ -223,6 +256,10 @@ public class TelaReservaCadastrar extends javax.swing.JInternalFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         carregarQuartos();
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
     
         private void carregarQuartos() {
             QuartoDAO dao = new QuartoDAO();

@@ -233,7 +233,7 @@ public class TelaCadastroHospede extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso!");
                 
             }catch(SQLException e){
-                JOptionPane.showMessageDialog(null, "Erro ao salvar os daods: "+e.toString());
+                JOptionPane.showMessageDialog(null, "Erro ao salvar os dados: "+e.toString());
             }
         }
     }                                                          

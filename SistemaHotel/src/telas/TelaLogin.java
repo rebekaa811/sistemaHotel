@@ -119,7 +119,7 @@ public class TelaLogin extends javax.swing.JFrame {
            tela.setVisible(true);
            dispose();
         } else {
-           JOptionPane.showMessageDialog(null, "Preencha os campos!");
+           JOptionPane.showMessageDialog(null, "Preencha os campos corretamente!");
         }
           
     }//GEN-LAST:event_jButton1ActionPerformed

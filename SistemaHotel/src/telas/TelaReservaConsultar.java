@@ -10,6 +10,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
+import model.Reserva;
+import modelo.dao.ReservaDAO;
+import java.util.List;
+
+
 
 
 
@@ -28,40 +33,36 @@ public class TelaReservaConsultar extends javax.swing.JInternalFrame {
     }
     
     
-    private void carregarTabelaReservas() {
-        DefaultTableModel modelo = (DefaultTableModel) tabelaConReservas.getModel();
-        modelo.setRowCount(0); // limpa a tabela antes de adicionar os dados
+    public void carregarTabelaReservas() {
+    String sql = "SELECT r.id, h.nome, h.cpf, q.numero AS quarto, r.data_entrada, r.data_saida, r.valor_total " +
+                 "FROM reservas r " +
+                 "JOIN hospedes h ON r.hospede_id = h.id " +
+                 "JOIN quartos q ON r.quarto_id = q.id";
 
-        try {
-            Connection con = ConnectionFactory.pegarConexao();
-            String sql = "SELECT r.id, h.nome, h.cpf, q.numero, r.data_entrada, r.data_saida, r.valor_total " +
-                        "FROM reservas r " +
-                        "JOIN hospedes h ON r.id_hospede = h.id " +
-                        "JOIN quartos q ON r.id_quarto = q.id";
+    try (Connection con = ConnectionFactory.pegarConexao();
+         PreparedStatement pst = con.prepareStatement(sql);
+         ResultSet rs = pst.executeQuery()) {
 
-            PreparedStatement stmt = con.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
+        DefaultTableModel model = (DefaultTableModel) tabelaConReservas.getModel();
+        model.setRowCount(0); 
 
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                String cpf = rs.getString("cpf");
-                int numeroQuarto = rs.getInt("numero");
-                String entrada = rs.getString("data_entrada");
-                String saida = rs.getString("data_saida");
-                double valor = rs.getDouble("valor_total");
-
-                modelo.addRow(new Object[]{id, nome, cpf, numeroQuarto, entrada, saida, valor});
-            }
-
-            rs.close();
-            stmt.close();
-            con.close();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Erro ao carregar reservas: " + e.getMessage());
-            e.printStackTrace();
+        while (rs.next()) {
+            Object[] row = {
+                rs.getInt("id"),
+                rs.getString("nome"),
+                rs.getString("cpf"),
+                rs.getString("quarto"),
+                rs.getDate("data_entrada"),
+                rs.getDate("data_saida"),
+                rs.getBigDecimal("valor_total")
+            };
+            model.addRow(row);
         }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Erro ao carregar reservas: " + e.getMessage());
     }
+}
+
 
 
 
@@ -180,6 +181,11 @@ public class TelaReservaConsultar extends javax.swing.JInternalFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconQuartoCon_20x20.png"))); // NOI18N
         jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/edit_icon_20x20.png"))); // NOI18N
         jButton2.setText("Editar");
@@ -292,13 +298,42 @@ public class TelaReservaConsultar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        int linhaSelecionada = tabelaConReservas.getSelectedRow();
+        if (linhaSelecionada != -1) {
+            int id = (int) tabelaConReservas.getValueAt(linhaSelecionada, 0);
+            try {
+                new ReservaDAO().excluir(id);
+                JOptionPane.showMessageDialog(null, "Reserva finalizada com sucesso!");
+                jButton1ActionPerformed(null); 
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Erro ao finalizar: " + e.toString());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione uma reserva!");
+        }
+
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         // TODO add your handling code here:
-        carregarTabelaReservas();
     }//GEN-LAST:event_formInternalFrameOpened
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String nome = jTextField1.getText();
+        String cpf = jFormattedTextField1.getText();
+    
+        List<Reserva> reservas = new ReservaDAO().buscarReservas(nome, cpf);
+        DefaultTableModel model = (DefaultTableModel) tabelaConReservas.getModel();
+        model.setRowCount(0);
+    
+        for (Reserva r : reservas) {
+            model.addRow(new Object[]{
+                r.getId(), r.getNomeHospede(), r.getCpfHospede(),
+                r.getNumeroQuarto(), r.getDataEntrada(), r.getDataSaida(), r.getValor()
+            });
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
 

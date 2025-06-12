@@ -4,6 +4,7 @@
  */
 package telas;
 
+
 /**
  *
  * @author rebek
@@ -67,10 +68,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadProdutos = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         menuReservas = new javax.swing.JMenu();
-        cadastrarReserva = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
         consultarReserva = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
+        cadastrarReserva = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         menuVendas = new javax.swing.JMenu();
         produtoVendas = new javax.swing.JMenu();
         serviçoVendas = new javax.swing.JMenu();
@@ -250,6 +251,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         hospedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_hospede.png"))); // NOI18N
         hospedes.setText("Hospedes");
+        hospedes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hospedesActionPerformed(evt);
+            }
+        });
 
         menuCadHospede.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cadrastar_20x20.png"))); // NOI18N
         menuCadHospede.setText("Cadastrar");
@@ -273,6 +279,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         quartos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_quarto.png"))); // NOI18N
         quartos.setText("Quartos");
+        quartos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quartosActionPerformed(evt);
+            }
+        });
 
         menuCadQuartos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_quarto.png"))); // NOI18N
         menuCadQuartos.setText("Cadastrar");
@@ -368,24 +379,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/reservas.png"))); // NOI18N
         menuReservas.setText("Reservas            |       ");
 
-        cadastrarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_reserva_20x20.png"))); // NOI18N
-        cadastrarReserva.setText("Cadastrar Reserva");
-        cadastrarReserva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarReservaActionPerformed(evt);
-            }
-        });
-
-        jMenuItem7.setText("...");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
-            }
-        });
-        cadastrarReserva.add(jMenuItem7);
-
-        menuReservas.add(cadastrarReserva);
-
         consultarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/calendar_icon_20x20.png"))); // NOI18N
         consultarReserva.setText("Consultar Reserva");
         consultarReserva.addActionListener(new java.awt.event.ActionListener() {
@@ -403,6 +396,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         consultarReserva.add(jMenuItem8);
 
         menuReservas.add(consultarReserva);
+
+        cadastrarReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_reserva_20x20.png"))); // NOI18N
+        cadastrarReserva.setText("Cadastrar Reserva");
+        cadastrarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarReservaActionPerformed(evt);
+            }
+        });
+
+        jMenuItem7.setText("...");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        cadastrarReserva.add(jMenuItem7);
+
+        menuReservas.add(cadastrarReserva);
 
         jMenuBar1.add(menuReservas);
 
@@ -631,6 +642,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaFundo.add(hospede);
         hospede.setVisible(true);
     }//GEN-LAST:event_menuCadHospedeActionPerformed
+
+    private void hospedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospedesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hospedesActionPerformed
+
+    private void quartosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quartosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quartosActionPerformed
 
     /**
      * @param args the command line arguments
