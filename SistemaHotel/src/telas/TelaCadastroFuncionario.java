@@ -61,8 +61,6 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        txtGrauAcesso1 = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         txtNomeUsuarioCadUsuario1 = new javax.swing.JTextField();
         telaCadFunContatos = new javax.swing.JPanel();
@@ -275,7 +273,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                                 .addGroup(telaCadFunDPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         telaCadFunDPessoaisLayout.setVerticalGroup(
             telaCadFunDPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,11 +324,6 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         jLabel20.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jLabel20.setText("Senha:");
 
-        txtGrauAcesso1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "Administrador", "Gerente", "Recepcionista", "Serviços", "Financeiro" }));
-
-        jLabel21.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        jLabel21.setText("G. Acesso:");
-
         txtNomeUsuarioCadUsuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeUsuarioCadUsuario1ActionPerformed(evt);
@@ -341,33 +334,30 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         telaCadFunCadUsuario1.setLayout(telaCadFunCadUsuario1Layout);
         telaCadFunCadUsuario1Layout.setHorizontalGroup(
             telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createSequentialGroup()
-                .addContainerGap(216, Short.MAX_VALUE)
+            .addGroup(telaCadFunCadUsuario1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createSequentialGroup()
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(120, 120, 120)))
-                        .addGroup(telaCadFunCadUsuario1Layout.createSequentialGroup()
-                            .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel19)
-                                .addComponent(txtNomeUsuarioCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(62, 62, 62)
-                            .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel20)
-                                .addComponent(senhaCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                            .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel21)
-                                .addComponent(txtGrauAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(119, 119, 119)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addGap(231, 231, 231))))
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaCadFunCadUsuario1Layout.createSequentialGroup()
+                        .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(txtNomeUsuarioCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(96, 96, 96)
+                        .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(senhaCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(301, 301, 301))))
+            .addGroup(telaCadFunCadUsuario1Layout.createSequentialGroup()
+                .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaCadFunCadUsuario1Layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel18))
+                    .addGroup(telaCadFunCadUsuario1Layout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel17)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         telaCadFunCadUsuario1Layout.setVerticalGroup(
             telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,17 +368,15 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                 .addComponent(jLabel18)
                 .addGap(24, 24, 24)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
+                    .addComponent(jLabel20))
                 .addGap(4, 4, 4)
                 .addGroup(telaCadFunCadUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(senhaCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGrauAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNomeUsuarioCadUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         telaCadFunContatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contatos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -428,7 +416,7 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                 .addGroup(telaCadFunContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtEmailContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
                 .addGroup(telaCadFunContatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel23)
                     .addComponent(txtCelularContatos, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -558,6 +546,11 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
 
         botãoSalvarFinPag.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cadrastar_20x20.png"))); // NOI18N
         botãoSalvarFinPag.setText("Salvar");
+        botãoSalvarFinPag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botãoSalvarFinPagActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -595,10 +588,10 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
                     .addGroup(telaFundoLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(telaFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(telaCadFunCadUsuario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(telaCadFunDPessoais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(telaCadFunEndereço, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(telaCadFunContatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(telaCadFunEndereço, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(telaCadFunCadUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(telaFundoLayout.createSequentialGroup()
                         .addGap(303, 303, 303)
                         .addComponent(botãoAtualizarFinPag)
@@ -662,6 +655,10 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCelularContatosActionPerformed
 
+    private void botãoSalvarFinPagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botãoSalvarFinPagActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botãoSalvarFinPagActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botãoAtualizarFinPag;
@@ -680,7 +677,6 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -720,7 +716,6 @@ public class TelaCadastroFuncionario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEmailContatos;
     private javax.swing.JComboBox<String> txtEstadoEnd;
     private javax.swing.JComboBox<String> txtGrauAcesso;
-    private javax.swing.JComboBox<String> txtGrauAcesso1;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNomeUsuarioCadUsuario;
     private javax.swing.JTextField txtNomeUsuarioCadUsuario1;

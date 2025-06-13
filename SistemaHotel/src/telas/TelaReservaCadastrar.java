@@ -254,7 +254,6 @@ public class TelaReservaCadastrar extends javax.swing.JInternalFrame {
             }
         }
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        carregarQuartos();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed

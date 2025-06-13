@@ -4,7 +4,7 @@
  */
 package telas;
 
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -12,12 +12,13 @@ import javax.swing.JOptionPane;
  */
 public class TelaCadastroProduto extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form TelaCadastroProduto
-     */
+
     public TelaCadastroProduto() {
         initComponents();
+        
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,6 +58,11 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         jLabel5.setText("Fornecedor:");
 
         txtFornecedorTelaCadProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Fornecedor 1", "Fornecedor 2", "Fornecedor 3", "Fornecedor 4", "Fornecedor 5 ", "Fornecedor 6", "Fornecedor 7", "Fornecedor 8", "Fornecedor 9", "Fornecedor 10" }));
+        txtFornecedorTelaCadProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFornecedorTelaCadProdActionPerformed(evt);
+            }
+        });
 
         botaoCadastrarTCP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_poroduto_20x20.png"))); // NOI18N
         botaoCadastrarTCP.setText("Cadastrar");
@@ -166,19 +172,15 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoCadastrarTCPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarTCPActionPerformed
-        // TODO add your handling code here:
-        if (txtNomeTelaCadProd.getText().isEmpty() ||
-            txtPrecoTelaCadProd.getText().isEmpty() ||
-            txtEstoqueTelaCadProd.toString().isEmpty() ||
-            txtFornecedorTelaCadProd.toString().isEmpty()) {
-
-            JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar um produto");
-        } else {
-            JOptionPane.showMessageDialog(null, "Hóspede cadastrado com sucesso!");
-        }
     }//GEN-LAST:event_botaoCadastrarTCPActionPerformed
+    
+    private void txtFornecedorTelaCadProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFornecedorTelaCadProdActionPerformed
+        // TODO add your handling code here:
 
-
+    }//GEN-LAST:event_txtFornecedorTelaCadProdActionPerformed
+ 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCadastrarTCP;
     private javax.swing.JLabel jLabel1;

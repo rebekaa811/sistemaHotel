@@ -74,15 +74,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem7 = new javax.swing.JMenuItem();
         menuVendas = new javax.swing.JMenu();
         produtoVendas = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         serviçoVendas = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         menuFinanceiro = new javax.swing.JMenu();
         ContasAPagar = new javax.swing.JMenu();
         menuCadContPagar = new javax.swing.JMenuItem();
-        menuConContPagar = new javax.swing.JMenuItem();
         ContasAReceber = new javax.swing.JMenu();
         menuCadContPaga = new javax.swing.JMenuItem();
-        menuConContRec = new javax.swing.JMenuItem();
         Balanço = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -422,10 +423,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         produtoVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_produtos.png"))); // NOI18N
         produtoVendas.setText("Produtos");
+
+        jMenuItem6.setText("...");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        produtoVendas.add(jMenuItem6);
+
         menuVendas.add(produtoVendas);
 
         serviçoVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_servicos.png"))); // NOI18N
         serviçoVendas.setText("Serviços");
+
+        jMenuItem9.setText("...");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        serviçoVendas.add(jMenuItem9);
+
         menuVendas.add(serviçoVendas);
 
         jMenuBar1.add(menuVendas);
@@ -433,11 +452,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuFinanceiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/financeiro.png"))); // NOI18N
         menuFinanceiro.setText("Financeiro             |        ");
 
-        ContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_paga.png"))); // NOI18N
-        ContasAPagar.setText("Contas a Pagar");
+        ContasAPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_conta.png"))); // NOI18N
+        ContasAPagar.setText("Cadastrar");
+        ContasAPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContasAPagarActionPerformed(evt);
+            }
+        });
 
-        menuCadContPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_conta.png"))); // NOI18N
-        menuCadContPagar.setText("Cadastrar");
+        menuCadContPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_recebe.png"))); // NOI18N
+        menuCadContPagar.setText("Contas Pagar/Receber");
         menuCadContPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCadContPagarActionPerformed(evt);
@@ -445,17 +469,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ContasAPagar.add(menuCadContPagar);
 
-        menuConContPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_consulta.png"))); // NOI18N
-        menuConContPagar.setText("Consultar");
-        ContasAPagar.add(menuConContPagar);
-
         menuFinanceiro.add(ContasAPagar);
 
-        ContasAReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_recebe.png"))); // NOI18N
-        ContasAReceber.setText("Contas a Receber");
+        ContasAReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_consulta.png"))); // NOI18N
+        ContasAReceber.setText("Consultar");
 
         menuCadContPaga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_cad_conta.png"))); // NOI18N
-        menuCadContPaga.setText("Cadastrar");
+        menuCadContPaga.setText("Contas Pagar/Receber");
         menuCadContPaga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuCadContPagaActionPerformed(evt);
@@ -463,19 +483,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         ContasAReceber.add(menuCadContPaga);
 
-        menuConContRec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_conta_consulta.png"))); // NOI18N
-        menuConContRec.setText("Consultar");
-        menuConContRec.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConContRecActionPerformed(evt);
-            }
-        });
-        ContasAReceber.add(menuConContRec);
-
         menuFinanceiro.add(ContasAReceber);
 
         Balanço.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_balanco.png"))); // NOI18N
         Balanço.setText("Balanço");
+
+        jMenuItem10.setText("...");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        Balanço.add(jMenuItem10);
+
         menuFinanceiro.add(Balanço);
 
         jMenuBar1.add(menuFinanceiro);
@@ -522,15 +542,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void menuCadContPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadContPagarActionPerformed
         // TODO add your handling code here:
+        TelaCadastroContas contas = new TelaCadastroContas();
+        telaFundo.add(contas);
+        contas.setVisible(true);
     }//GEN-LAST:event_menuCadContPagarActionPerformed
-
-    private void menuCadContPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadContPagaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuCadContPagaActionPerformed
-
-    private void menuConContRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConContRecActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuConContRecActionPerformed
 
     private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
         // TODO add your handling code here:
@@ -651,6 +666,38 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_quartosActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        TelaProdutosVendas produto = new TelaProdutosVendas();
+        telaFundo.add(produto);
+        produto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        TelaServiçosVendas serviços = new TelaServiçosVendas();
+        telaFundo.add(serviços);
+        serviços.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void menuCadContPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadContPagaActionPerformed
+        // TODO add your handling code here:
+        TelaConsultaContas conta = new TelaConsultaContas();
+        telaFundo.add(conta);
+        conta.setVisible(true);
+    }//GEN-LAST:event_menuCadContPagaActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        Balanço balanco = new Balanço();
+        telaFundo.add(balanco);
+        balanco.setVisible(true);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void ContasAPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContasAPagarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContasAPagarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -697,12 +744,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -720,8 +770,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCadProdutos;
     private javax.swing.JMenuItem menuCadQuartos;
     private javax.swing.JMenu menuCadastro;
-    private javax.swing.JMenuItem menuConContPagar;
-    private javax.swing.JMenuItem menuConContRec;
     private javax.swing.JMenu menuFinanceiro;
     private javax.swing.JMenu menuReservas;
     private javax.swing.JMenu menuSair;
